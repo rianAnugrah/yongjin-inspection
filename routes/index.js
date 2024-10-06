@@ -30,8 +30,12 @@ async function routes (fastify, options) {
     })
   }
   
-  fastify.get('/', { preHandler: fetchTodos }, (request, reply) => {
-    reply.view('/templates/index.ejs', { filter: null })
+  fastify.get('/', { preHandler: fetchTodos },  (request, reply) => {
+    reply.view('/templates/todo.ejs', { filter: null } , {layout : "/templates/auth.ejs"})
+  })
+
+  fastify.get('/scan', (request, reply) => {
+    reply.view('/templates/scan.ejs', { filter: null }, {layout : "/templates/public.ejs"})
   })
   
   fastify.get('/active', { preHandler: fetchTodos }, (request, reply) => {

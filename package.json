@@ -12,6 +12,7 @@
     "mkdirp": "^1.0.4",
     "pluralize": "^8.0.0",
     "point-of-view": "^5.0.0",
+    "quagga": "^0.12.1",
     "sqlite3": "^5.0.2"
   }
 }

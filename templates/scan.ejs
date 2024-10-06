@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcode Scanner</title>
+  <style>
+    #barcode-scanner {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan Barcode</h1>
+  <div id="barcode-scanner"></div>
+
+  <h1>GPS Location Detection</h1>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="location"></p>
+
+    <script>
+        // Check if Geolocation is supported
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        // Show the user's position
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            document.getElementById("location").innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+        }
+
+        // Handle errors
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("location").innerText = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("location").innerText = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("location").innerText = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("location").innerText = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+  
+  <script src="https://unpkg.com/quagga@0.12.1/dist/quagga.min.js"></script>
+  <script>
+    // Initialize QuaggaJS
+    Quagga.init({
+      inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        target: document.querySelector('#barcode-scanner'), // The HTML element where the video will be displayed
+      },
+      decoder: {
+        readers: ["code_128_reader"] // Choose the barcode types you need
+      }
+    }, function(err) {
+      if (err) {
+        console.error('Quagga init error:', err);
+        return;
+      }
+      console.log("Initialization finished. Ready to start");
+      Quagga.start(); // Start the video stream for barcode scanning
+    });
+
+    // Listen for barcode detection
+    Quagga.onDetected(function(result) {
+      const barcode = result.codeResult.code;
+      console.log("Scanned Barcode: " + barcode);
+
+      // Send the barcode to the backend (Fastify or any server)
+      fetch('/api/barcode', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ barcode })
+      });
+    });
+  </script>
+</body>
+</html>

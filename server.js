@@ -11,7 +11,8 @@ fastify.register(require('point-of-view'), {
   },
   defaultContext: {
     pluralize: require('pluralize')
-  }
+  },
+  // layout: 'templates/layout.ejs'  
 })
 
 fastify.register(require('./db'))
