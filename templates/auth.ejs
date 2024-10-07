@@ -6,6 +6,8 @@
     <title>Fastify • TodoMVC</title>
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/index.css" />
+    <link href="/css/tailwind.css" rel="stylesheet">
+
   </head>
   <body>
     <header>
@@ -20,8 +22,27 @@
       <%- body %>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Fastify App</p>
-    </footer>
+
+    <div x-data="{ open: true }" class="fixed bottom-0 inset-x-0 bg-gray-800 text-white shadow-lg">
+      <!-- Menu Toggle Button -->
+      <!-- <button @click="open = !open" class="w-full py-4 text-center bg-purple-600">
+        <span x-show="!open" class="inline-block">Open Menu</span>
+        <span x-show="open" class="inline-block">Close Menu</span>
+      </button> -->
+    
+      <!-- Navigation Links -->
+      <div x-show="open" x-transition class="bg-gray-900">
+        <ul class="flex justify-around py-4 text-lg">
+          <li><a href="#" class="hover:text-purple-400 transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-purple-400 transition-colors">About</a></li>
+          <li><a href="#" class="hover:text-purple-400 transition-colors">Services</a></li>
+          <li><a href="#" class="hover:text-purple-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+
   </body>
 </html>
