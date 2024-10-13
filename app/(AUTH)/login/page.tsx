@@ -1,13 +1,11 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import PocketBase from 'pocketbase';
-
-// Initialize PocketBase
-const pb = new PocketBase('http://192.168.3.249:8090'); 
+import pb from '@/app/lib/pocketbase';
 
 
 export default function LoginPage() {
+  
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
