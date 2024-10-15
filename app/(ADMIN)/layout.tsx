@@ -28,8 +28,8 @@ export default function RootLayout({
 
 
   const menus = [{
-    label : 'Home',
-    href : '/home',
+    label : 'Dashboard',
+    href : '/dashboard',
     icon : <FaHome />
   },
   {
@@ -59,7 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavDesktop menus={menus}/>
-        <div className="w-screen h-screen p-8 pl-28">
+        <div className="w-screen  p-8 pl-40 bg-base-100">
 
         {children}
         </div>

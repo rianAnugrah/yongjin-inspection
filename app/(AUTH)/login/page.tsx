@@ -19,7 +19,7 @@ export default function LoginPage() {
       const authData = await pb.collection('users').authWithPassword(email, password);
       console.log(authData);
       // Redirect to dashboard or home page after successful login
-      router.push('/home');
+      router.push('/dashboard');
     } catch (error) {
       console.error('Login failed', error);
       setError('Login failed. Please check your credentials.');
@@ -35,7 +35,7 @@ export default function LoginPage() {
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label className="label">
-                <span className="text-base label-text">Email</span>
+                <span className=" label-text">Email</span>
               </label>
               <input
                 type="email"
@@ -48,7 +48,7 @@ export default function LoginPage() {
             </div>
             <div className="mb-4">
               <label className="label">
-                <span className="text-base label-text">Password</span>
+                <span className=" label-text">Password</span>
               </label>
               <input
                 type="password"
