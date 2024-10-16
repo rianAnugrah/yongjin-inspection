@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import NavDesktop from "../shared/nav-desktop";
 import { FaCog, FaDatabase, FaFile, FaHome, FaSearch } from "react-icons/fa";
+import NavMobile from "../shared/nav-mobile";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -59,7 +60,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavDesktop menus={menus}/>
-        <div className="w-screen  p-8 pl-40 bg-base-100">
+        <NavMobile menus={menus}/>
+        <div className="w-screen  p-4  lg:pl-40 bg-base-100">
 
         {children}
         </div>

@@ -10,7 +10,7 @@ export default function NavDesktop(props: NavProps) {
   const pathname = usePathname();
 
   return (
-    <div className="fixed h-screen left-0 top-0 px-2 py-8 flex flex-col gap-2 w-32 bg-base-200">
+    <div className="fixed h-screen left-0 top-0 px-2 py-8 hidden lg:flex flex-col gap-2 w-32 bg-base-200">
       <ArrayMapper
         of={menus}
         render={(item, index) => (

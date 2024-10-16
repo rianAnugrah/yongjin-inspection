@@ -14,17 +14,17 @@ export default function Home() {
         className="z-0 "
       />
       <div className="absolute inset-0 backdrop-blur bg-gradient-to-tr from-black via-opacity-75 to-black opacity-50 z-10"></div>
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
-          <h1 className="text-3xl bold w-full text-center">
+        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10 backdrop-blur-lg rounded  shadow p-4">
+          <h1 className="text-3xl bold w-full text-center text-gray-200">
             Yongjin Inspections
           </h1>
-          <p className="h-full max-w-md text-center">
+          <p className="h-full max-w-md text-center text-gray-200">
             Selamat datang di Aplikasi Inspeksi PT. Yongjin Javasuka Garment!
             Pastikan kualitas terbaik bersama kami, dari awal hingga akhir
             produksi. Bersama, kita wujudkan standar tertinggi!
           </p>
         </main>
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center z-10">
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center z-10 backdrop-blur-lg rounded shadow p-4 text-gray-300">
           <a
             className="flex items-center gap-2 hover:underline hover:underline-offset-4"
             href="#"
@@ -44,7 +44,7 @@ export default function Home() {
             Help
           </a>
           <a
-            className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+            className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-teal-500"
             href="/login"
             arget="_blank"
             rel="noopener noreferrer"

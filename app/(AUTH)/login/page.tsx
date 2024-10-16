@@ -28,10 +28,10 @@ export default function LoginPage() {
   
   return (
     <div className="min-h-screen bg-base-200 flex items-center">
-    <div className="card mx-auto w-full max-w-5xl shadow-xl">
-      <div className="grid md:grid-cols-2 grid-cols-1 bg-base-100 rounded-xl">
+    <div className=" mx-auto w-full max-w-5xl p-4">
+      <div className="grid grid-cols-1 bg-base-100 rounded-xl">
         <div className='py-24 px-10'>
-          <h2 className='text-2xl font-semibold mb-2 text-center'>Login</h2>
+          <h2 className='text-2xl font-semibold mb-2 text-center'>Yongjin Login</h2>
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label className="label">
@@ -68,15 +68,7 @@ export default function LoginPage() {
             <a href="#" className="text-sm hover:underline hover:text-blue-600">Forgot Password?</a>
           </div>
         </div>
-        <div className='py-24 px-10 flex items-center bg-base-200'>
-          <div>
-            <h2 className='text-2xl font-semibold mb-2 text-center'>Welcome Back!</h2>
-            <div className='text-center'>
-              <p>Don't have an account?</p>
-              <a href="#" className="inline-block hover:text-primary hover:underline mt-2">Sign up here</a>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
