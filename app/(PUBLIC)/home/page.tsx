@@ -16,7 +16,7 @@ export default function Home() {
       <div className="absolute inset-0 backdrop-blur bg-gradient-to-tr from-black via-opacity-75 to-black opacity-50 z-10"></div>
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10 backdrop-blur-lg rounded  shadow p-4">
           <h1 className="text-3xl bold w-full text-center text-gray-200">
-            Yongjin Inspections
+            YONGJIN
           </h1>
           <p className="h-full max-w-md text-center text-gray-200">
             Selamat datang di Aplikasi Inspeksi PT. Yongjin Javasuka Garment!
