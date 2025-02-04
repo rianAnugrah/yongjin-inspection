@@ -57,11 +57,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NavDesktop menus={menus}/>
         <NavMobile menus={menus}/>
-        <div className="w-screen  p-4  lg:pl-40 bg-base-100">
+        <div className="w-screen p-4 lg:p-0  lg:pl-20 bg-[#1b1c1d] text-white">
 
         {children}
         </div>

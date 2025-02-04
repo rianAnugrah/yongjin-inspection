@@ -13,3 +13,27 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; /* For horizontal scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px; /* Rounded track */
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; /* Rounded handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

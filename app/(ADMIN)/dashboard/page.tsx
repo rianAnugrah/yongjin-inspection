@@ -1,5 +1,6 @@
 "use client";
 
+import TopBar from "@/app/shared/topbar";
 import UserDropdown from "@/app/shared/user-dropdown";
 import React from "react";
 import { AiOutlineCalendar, AiOutlineEnvironment, AiOutlineUnorderedList, AiOutlineWarning } from "react-icons/ai";
@@ -19,32 +20,28 @@ import {
 
 export default function DashboardPage() {
   return (
-    <div className="flex w-full flex-col gap-2">
-      {/* TOP BAR */}
-      <div className="border-b-2 w-full py-4 flex items-center justify-between">
-        <p className="font-bold text-3xl">Dashboard</p>
-        <UserDropdown />
-      </div>
+    <div className="flex w-full flex-col ">
+     <TopBar heading="Dashboard"/>
 
-      <div className="flex w-full flex-col gap-2 overflow-auto h-[calc(100dvh_-_180px)] lg:h-[calc(100dvh_-_118px)] pb-8">
+      <div className="flex w-full flex-col gap-2 overflow-auto h-[calc(100dvh_-_180px)] lg:h-[calc(100dvh_-_89px)] p-8">
         <h1 className="text-xl mt-4 flex gap-2">
           {" "}
           <AiOutlineUnorderedList /> Overview
         </h1>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
-          <div className="flex flex-col border rounded-lg p-4 items-center">
+          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border rounded-lg p-4 items-center">
+          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border rounded-lg p-4 items-center">
+          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border rounded-lg p-4 items-center">
+          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
@@ -81,7 +78,7 @@ export default function DashboardPage() {
 
 const DashboardItem = () => {
   return (
-    <div className="border rounded-lg w-full p-4 flex flex-col items-center justify-between ">
+    <div className="border-[#4A5050] border rounded-lg w-full p-4 flex flex-col items-center justify-between ">
       <div className="flex flex-col w-full items-start gap-0">
         <div className="">Daily Check Hydrant</div>
         <div className="flex w-full items-center gap-2  text-sm text-gray-500">
@@ -100,7 +97,7 @@ const DashboardItem = () => {
             Not checked
           </div>
           <div className="flex flex-grow"></div>
-          <button className="border p-2 w-20 rounded font-bold bg-gray-100 hover:bg-gray-200">
+          <button className="border-[#4A5050] border p-2 w-20 rounded font-bold bg-gray-100 hover:bg-gray-200">
             Go
           </button>
         </div>
