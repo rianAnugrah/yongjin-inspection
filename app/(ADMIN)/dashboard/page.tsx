@@ -3,7 +3,12 @@
 import TopBar from "@/app/shared/topbar";
 import UserDropdown from "@/app/shared/user-dropdown";
 import React from "react";
-import { AiOutlineCalendar, AiOutlineEnvironment, AiOutlineUnorderedList, AiOutlineWarning } from "react-icons/ai";
+import {
+  AiOutlineCalendar,
+  AiOutlineEnvironment,
+  AiOutlineUnorderedList,
+  AiOutlineWarning,
+} from "react-icons/ai";
 import {
   FaBars,
   FaBell,
@@ -17,31 +22,32 @@ import {
   FaMapLocation,
   FaMapLocationDot,
 } from "react-icons/fa6";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function DashboardPage() {
   return (
     <div className="flex w-full flex-col ">
-     <TopBar heading="Dashboard"/>
+      <TopBar heading="Dashboard" />
 
       <div className="flex w-full flex-col gap-2 overflow-auto h-[calc(100dvh_-_180px)] lg:h-[calc(100dvh_-_89px)] p-8">
-        <h1 className="text-xl mt-4 flex gap-2">
+        <h1 className="text-base mt-0 flex gap-2 items-center">
           {" "}
-          <AiOutlineUnorderedList /> Overview
+          <AiOutlineUnorderedList /> <div>Overview</div>
         </h1>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
-          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 w-fit">
+          <div className="flex flex-col bg-[#282a2c] max-w-[10rem] rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
+          <div className="flex flex-col bg-[#282a2c] max-w-[10rem] rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
+          <div className="flex flex-col bg-[#282a2c] max-w-[10rem] rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
-          <div className="flex flex-col border-[#4A5050] border rounded-lg p-4 items-center">
+          <div className="flex flex-col bg-[#282a2c] max-w-[10rem] rounded-lg p-4 items-center">
             <div>Daily Checks</div>
             <div className="text-2xl font-bold">22/124</div>
           </div>
@@ -49,28 +55,51 @@ export default function DashboardPage() {
 
         {/* ACTION NEEDED */}
 
-        <h1 className="text-xl mt-4 flex gap-2">
+        <h1 className="text-bse items-center mt-4 flex gap-2">
           {" "}
-          <FaBell /> Notifications
+          <FaBell /> <div>Notifications</div>
         </h1>
-
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
-        <DashboardItem />
+        <div className="w-full flex h-[calc(100dvh_-_340px)] gap-4">
+          <ScrollArea className="h-full w-full lg:max-w-1/2 rounded-md border pr-4  border-none ">
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+          </ScrollArea>
+          <ScrollArea className="h-full w-full lg:max-w-1/2 pr-4">
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+            <DashboardItem />
+          </ScrollArea>
+         
+        </div>
       </div>
     </div>
   );
@@ -78,7 +107,7 @@ export default function DashboardPage() {
 
 const DashboardItem = () => {
   return (
-    <div className="border-[#4A5050] border rounded-lg w-full p-4 flex flex-col items-center justify-between ">
+    <div className="border-[#4A5050] bg-[#282a2c] border my-2 rounded-lg w-full p-4 flex flex-col items-center justify-between ">
       <div className="flex flex-col w-full items-start gap-0">
         <div className="">Daily Check Hydrant</div>
         <div className="flex w-full items-center gap-2  text-sm text-gray-500">
